@@ -15,6 +15,9 @@ WORKDIR /src
 COPY ["docker-test-project/docker-test-project.csproj", "docker-test-project/"]
 RUN dotnet restore "./docker-test-project/docker-test-project.csproj"
 COPY . .
+# Copy the ASP.NET Core HTTPS development certificate
+COPY --from=build-env /root/.dotnet/corefx/cryptography/x509stores/my /root/.dotnet/corefx/cryptography/x509stores/my
+
 WORKDIR "/src/docker-test-project"
 RUN dotnet build "./docker-test-project.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
