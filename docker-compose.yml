@@ -4,3 +4,5 @@ services:
     build:
       context: .
       dockerfile: docker-test-project/Dockerfile
+    networks:
+      - my-custom-network
