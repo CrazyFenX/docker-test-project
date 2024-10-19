@@ -6,3 +6,7 @@ services:
       dockerfile: docker-test-project/Dockerfile
     networks:
       - googleearth_my-custom-network
+
+networks:
+  googleearth_my-custom-network:
+    external: true
