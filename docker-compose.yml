@@ -1,0 +1,6 @@
+services:
+  docker-test-project:
+    image: ${DOCKER_REGISTRY-}dockertestproject
+    build:
+      context: .
+      dockerfile: docker-test-project/Dockerfile
