@@ -5,4 +5,4 @@ services:
       context: .
       dockerfile: docker-test-project/Dockerfile
     networks:
-      - my-custom-network
+      - googleearth_my-custom-network
